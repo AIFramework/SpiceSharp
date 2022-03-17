@@ -1,0 +1,367 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2F589DF3-8D82-4BD1-BF98-955AD62157C1}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SpiceSharpNetFr</RootNamespace>
+    <AssemblyName>SpiceSharpNetFr</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Algebra\Matrix\Column.cs" />
+    <Compile Include="Algebra\Matrix\DenseMatrix.cs" />
+    <Compile Include="Algebra\Matrix\Matrix.cs" />
+    <Compile Include="Algebra\Matrix\MatrixElement.cs" />
+    <Compile Include="Algebra\Matrix\Row.cs" />
+    <Compile Include="Algebra\Matrix\SparseMatrix.cs" />
+    <Compile Include="Algebra\Matrix\SparseMatrixElement.cs" />
+    <Compile Include="Algebra\SingularException.cs" />
+    <Compile Include="Algebra\Solve\ComplexSolver.cs" />
+    <Compile Include="Algebra\Solve\LinearSystemIndices.cs" />
+    <Compile Include="Algebra\Solve\Markowitz\Markowitz.cs" />
+    <Compile Include="Algebra\Solve\Markowitz\MarkowitzDiagonal.cs" />
+    <Compile Include="Algebra\Solve\Markowitz\MarkowitzEntireMatrix.cs" />
+    <Compile Include="Algebra\Solve\Markowitz\MarkowitzQuickDiagonal.cs" />
+    <Compile Include="Algebra\Solve\Markowitz\MarkowitzSearchStrategy.cs" />
+    <Compile Include="Algebra\Solve\Markowitz\MarkowitzSingleton.cs" />
+    <Compile Include="Algebra\Solve\PivotStrategy.cs" />
+    <Compile Include="Algebra\Solve\RealSolver.cs" />
+    <Compile Include="Algebra\Solve\Solver.cs" />
+    <Compile Include="Algebra\Solve\SparseLinearSystem.cs" />
+    <Compile Include="Algebra\Solve\Translation.cs" />
+    <Compile Include="Algebra\SparseException.cs" />
+    <Compile Include="Algebra\Vector\DenseVector.cs" />
+    <Compile Include="Algebra\Vector\SparseVector.cs" />
+    <Compile Include="Algebra\Vector\SparseVectorElement.cs" />
+    <Compile Include="Algebra\Vector\Vector.cs" />
+    <Compile Include="Algebra\Vector\VectorElement.cs" />
+    <Compile Include="Attributes\ConnectedAttribute.cs" />
+    <Compile Include="Attributes\DerivedPropertyAttribute.cs" />
+    <Compile Include="Attributes\IndependentSourceAttribute.cs" />
+    <Compile Include="Attributes\ParameterInfoAttribute.cs" />
+    <Compile Include="Attributes\ParameterNameAttribute.cs" />
+    <Compile Include="Attributes\PinAttribute.cs" />
+    <Compile Include="Attributes\VoltageDriverAttribute.cs" />
+    <Compile Include="Circuits\BindingContext.cs" />
+    <Compile Include="Circuits\Circuit.cs" />
+    <Compile Include="Circuits\Entity.cs" />
+    <Compile Include="Circuits\EntityCollection.cs" />
+    <Compile Include="Circuits\EntityEventArgs.cs" />
+    <Compile Include="Circuits\InstanceData.cs" />
+    <Compile Include="Circuits\OrderedCircuit.cs" />
+    <Compile Include="Circuits\Validator.cs" />
+    <Compile Include="Components\Common\IndependentSourceFrequencyParameters.cs" />
+    <Compile Include="Components\Common\IndependentSourceParameters.cs" />
+    <Compile Include="Components\Component.cs" />
+    <Compile Include="Components\ComponentBindingContext.cs" />
+    <Compile Include="Components\ComponentInstanceData.cs" />
+    <Compile Include="Components\Currentsources\CCCS\BaseParameters.cs" />
+    <Compile Include="Components\Currentsources\CCCS\BiasingBehavior.cs" />
+    <Compile Include="Components\Currentsources\CCCS\CurrentControlledCurrentSource.cs" />
+    <Compile Include="Components\Currentsources\CCCS\FrequencyBehavior.cs" />
+    <Compile Include="Components\Currentsources\ISRC\AcceptBehavior.cs" />
+    <Compile Include="Components\Currentsources\ISRC\BiasingBehavior.cs" />
+    <Compile Include="Components\Currentsources\ISRC\CurrentSource.cs" />
+    <Compile Include="Components\Currentsources\ISRC\FrequencyBehavior.cs" />
+    <Compile Include="Components\Currentsources\VCCS\BaseParameters.cs" />
+    <Compile Include="Components\Currentsources\VCCS\BiasingBehavior.cs" />
+    <Compile Include="Components\Currentsources\VCCS\FrequencyBehavior.cs" />
+    <Compile Include="Components\Currentsources\VCCS\VoltageControlledCurrentSource.cs" />
+    <Compile Include="Components\Distributed\DelayedSignal.cs" />
+    <Compile Include="Components\Distributed\LoslessTransmissionLine\AcceptBehavior.cs" />
+    <Compile Include="Components\Distributed\LoslessTransmissionLine\BaseParameters.cs" />
+    <Compile Include="Components\Distributed\LoslessTransmissionLine\BiasingBehavior.cs" />
+    <Compile Include="Components\Distributed\LoslessTransmissionLine\FrequencyBehavior.cs" />
+    <Compile Include="Components\Distributed\LoslessTransmissionLine\LosslessTransmissionLine.cs" />
+    <Compile Include="Components\Distributed\LoslessTransmissionLine\TransientBehavior.cs" />
+    <Compile Include="Components\Distributed\VoltageDelay\AcceptBehavior.cs" />
+    <Compile Include="Components\Distributed\VoltageDelay\BaseParameters.cs" />
+    <Compile Include="Components\Distributed\VoltageDelay\BiasingBehavior.cs" />
+    <Compile Include="Components\Distributed\VoltageDelay\FrequencyBehavior.cs" />
+    <Compile Include="Components\Distributed\VoltageDelay\TransientBehavior.cs" />
+    <Compile Include="Components\Distributed\VoltageDelay\VoltageDelay.cs" />
+    <Compile Include="Components\Model.cs" />
+    <Compile Include="Components\Noise\ComponentNoise.cs" />
+    <Compile Include="Components\Noise\NodeCollection.cs" />
+    <Compile Include="Components\Noise\NoiseGain.cs" />
+    <Compile Include="Components\Noise\NoiseGenerator.cs" />
+    <Compile Include="Components\Noise\NoiseGeneratorCollection.cs" />
+    <Compile Include="Components\Noise\NoiseShot.cs" />
+    <Compile Include="Components\Noise\NoiseThermal.cs" />
+    <Compile Include="Components\RLC\CAP\BaseParameters.cs" />
+    <Compile Include="Components\RLC\CAP\Capacitor.cs" />
+    <Compile Include="Components\RLC\CAP\CapacitorModel.cs" />
+    <Compile Include="Components\RLC\CAP\FrequencyBehavior.cs" />
+    <Compile Include="Components\RLC\CAP\ModelBaseParameters.cs" />
+    <Compile Include="Components\RLC\CAP\TemperatureBehavior.cs" />
+    <Compile Include="Components\RLC\CAP\TransientBehavior.cs" />
+    <Compile Include="Components\RLC\IND\BaseParameters.cs" />
+    <Compile Include="Components\RLC\IND\BiasingBehavior.cs" />
+    <Compile Include="Components\RLC\IND\FrequencyBehavior.cs" />
+    <Compile Include="Components\RLC\IND\Inductor.cs" />
+    <Compile Include="Components\RLC\IND\TransientBehavior.cs" />
+    <Compile Include="Components\RLC\IND\UpdateFluxEventArgs.cs" />
+    <Compile Include="Components\RLC\MUT\BaseParameters.cs" />
+    <Compile Include="Components\RLC\MUT\FrequencyBehavior.cs" />
+    <Compile Include="Components\RLC\MUT\MutualInductance.cs" />
+    <Compile Include="Components\RLC\MUT\TemperatureBehavior.cs" />
+    <Compile Include="Components\RLC\MUT\TransientBehavior.cs" />
+    <Compile Include="Components\RLC\RES\BaseParameters.cs" />
+    <Compile Include="Components\RLC\RES\BiasingBehavior.cs" />
+    <Compile Include="Components\RLC\RES\FrequencyBehavior.cs" />
+    <Compile Include="Components\RLC\RES\ModelBaseParameters.cs" />
+    <Compile Include="Components\RLC\RES\NoiseBehavior.cs" />
+    <Compile Include="Components\RLC\RES\Resistor.cs" />
+    <Compile Include="Components\RLC\RES\ResistorModel.cs" />
+    <Compile Include="Components\RLC\RES\TemperatureBehavior.cs" />
+    <Compile Include="Components\Semiconductors\Bipolar\BaseParameters.cs" />
+    <Compile Include="Components\Semiconductors\Bipolar\BiasingBehavior.cs" />
+    <Compile Include="Components\Semiconductors\Bipolar\BipolarJunctionTransistor.cs" />
+    <Compile Include="Components\Semiconductors\Bipolar\BipolarJunctionTransistorModel.cs" />
+    <Compile Include="Components\Semiconductors\Bipolar\DynamicParameterBehavior.cs" />
+    <Compile Include="Components\Semiconductors\Bipolar\ExcessPhaseEventArgs.cs" />
+    <Compile Include="Components\Semiconductors\Bipolar\FrequencyBehavior.cs" />
+    <Compile Include="Components\Semiconductors\Bipolar\ModelBaseParameters.cs" />
+    <Compile Include="Components\Semiconductors\Bipolar\ModelNoiseParameters.cs" />
+    <Compile Include="Components\Semiconductors\Bipolar\ModelTemperatureBehavior.cs" />
+    <Compile Include="Components\Semiconductors\Bipolar\NoiseBehavior.cs" />
+    <Compile Include="Components\Semiconductors\Bipolar\TemperatureBehavior.cs" />
+    <Compile Include="Components\Semiconductors\Bipolar\TransientBehavior.cs" />
+    <Compile Include="Components\Semiconductors\DIO\BaseParameters.cs" />
+    <Compile Include="Components\Semiconductors\DIO\BiasingBehavior.cs" />
+    <Compile Include="Components\Semiconductors\DIO\Diode.cs" />
+    <Compile Include="Components\Semiconductors\DIO\DiodeModel.cs" />
+    <Compile Include="Components\Semiconductors\DIO\DynamicParameterBehavior.cs" />
+    <Compile Include="Components\Semiconductors\DIO\FrequencyBehavior.cs" />
+    <Compile Include="Components\Semiconductors\DIO\ModelBaseParameters.cs" />
+    <Compile Include="Components\Semiconductors\DIO\ModelNoiseParameters.cs" />
+    <Compile Include="Components\Semiconductors\DIO\ModelTemperatureBehavior.cs" />
+    <Compile Include="Components\Semiconductors\DIO\NoiseBehavior.cs" />
+    <Compile Include="Components\Semiconductors\DIO\TemperatureBehavior.cs" />
+    <Compile Include="Components\Semiconductors\DIO\TransientBehavior.cs" />
+    <Compile Include="Components\Semiconductors\JFET\BaseParameters.cs" />
+    <Compile Include="Components\Semiconductors\JFET\BiasingBehavior.cs" />
+    <Compile Include="Components\Semiconductors\JFET\FrequencyBehavior.cs" />
+    <Compile Include="Components\Semiconductors\JFET\JFET.cs" />
+    <Compile Include="Components\Semiconductors\JFET\JFETModel.cs" />
+    <Compile Include="Components\Semiconductors\JFET\ModelBaseParameters.cs" />
+    <Compile Include="Components\Semiconductors\JFET\ModelNoiseParameters.cs" />
+    <Compile Include="Components\Semiconductors\JFET\ModelTemperatureBehavior.cs" />
+    <Compile Include="Components\Semiconductors\JFET\TemperatureBehavior.cs" />
+    <Compile Include="Components\Semiconductors\JFET\TransientBehavior.cs" />
+    <Compile Include="Components\Semiconductors\MOS\Common\BaseParameters.cs" />
+    <Compile Include="Components\Semiconductors\MOS\Common\ModelBaseParameters.cs" />
+    <Compile Include="Components\Semiconductors\MOS\Common\ModelNoiseParameters.cs" />
+    <Compile Include="Components\Semiconductors\MOS\Common\Transistor.cs" />
+    <Compile Include="Components\Semiconductors\MOS\Level1\BaseParameters.cs" />
+    <Compile Include="Components\Semiconductors\MOS\Level1\BiasingBehavior.cs" />
+    <Compile Include="Components\Semiconductors\MOS\Level1\DynamicParameterBehavior.cs" />
+    <Compile Include="Components\Semiconductors\MOS\Level1\FrequencyBehavior.cs" />
+    <Compile Include="Components\Semiconductors\MOS\Level1\ModelBaseParameters.cs" />
+    <Compile Include="Components\Semiconductors\MOS\Level1\ModelTemperatureBehavior.cs" />
+    <Compile Include="Components\Semiconductors\MOS\Level1\Mosfet1.cs" />
+    <Compile Include="Components\Semiconductors\MOS\Level1\Mosfet1Model.cs" />
+    <Compile Include="Components\Semiconductors\MOS\Level1\NoiseBehavior.cs" />
+    <Compile Include="Components\Semiconductors\MOS\Level1\TemperatureBehavior.cs" />
+    <Compile Include="Components\Semiconductors\MOS\Level1\TransientBehavior.cs" />
+    <Compile Include="Components\Semiconductors\MOS\Level2\BaseParameters.cs" />
+    <Compile Include="Components\Semiconductors\MOS\Level2\BiasingBehavior.cs" />
+    <Compile Include="Components\Semiconductors\MOS\Level2\DynamicParameters.cs" />
+    <Compile Include="Components\Semiconductors\MOS\Level2\FrequencyBehavior.cs" />
+    <Compile Include="Components\Semiconductors\MOS\Level2\ModelBaseParameters.cs" />
+    <Compile Include="Components\Semiconductors\MOS\Level2\ModelTemperatureBehavior.cs" />
+    <Compile Include="Components\Semiconductors\MOS\Level2\Mosfet2.cs" />
+    <Compile Include="Components\Semiconductors\MOS\Level2\Mosfet2Model.cs" />
+    <Compile Include="Components\Semiconductors\MOS\Level2\NoiseBehavior.cs" />
+    <Compile Include="Components\Semiconductors\MOS\Level2\TemperatureBehavior.cs" />
+    <Compile Include="Components\Semiconductors\MOS\Level2\TransientBehavior.cs" />
+    <Compile Include="Components\Semiconductors\MOS\Level3\BaseParameters.cs" />
+    <Compile Include="Components\Semiconductors\MOS\Level3\BiasingBehavior.cs" />
+    <Compile Include="Components\Semiconductors\MOS\Level3\DynamicParameterBehavior.cs" />
+    <Compile Include="Components\Semiconductors\MOS\Level3\FrequencyBehavior.cs" />
+    <Compile Include="Components\Semiconductors\MOS\Level3\ModelBaseParameters.cs" />
+    <Compile Include="Components\Semiconductors\MOS\Level3\ModelTemperatureBehavior.cs" />
+    <Compile Include="Components\Semiconductors\MOS\Level3\Mosfet3.cs" />
+    <Compile Include="Components\Semiconductors\MOS\Level3\Mosfet3Model.cs" />
+    <Compile Include="Components\Semiconductors\MOS\Level3\NoiseBehavior.cs" />
+    <Compile Include="Components\Semiconductors\MOS\Level3\TemperatureBehavior.cs" />
+    <Compile Include="Components\Semiconductors\MOS\Level3\TransientBehavior.cs" />
+    <Compile Include="Components\Semiconductors\Semiconductor.cs" />
+    <Compile Include="Components\Switches\AcceptBehavior.cs" />
+    <Compile Include="Components\Switches\BaseParameters.cs" />
+    <Compile Include="Components\Switches\BiasingBehavior.cs" />
+    <Compile Include="Components\Switches\Controller.cs" />
+    <Compile Include="Components\Switches\CSW\CurrentControlled.cs" />
+    <Compile Include="Components\Switches\CSW\CurrentModelParameters.cs" />
+    <Compile Include="Components\Switches\CSW\CurrentSwitch.cs" />
+    <Compile Include="Components\Switches\CSW\CurrentSwitchModel.cs" />
+    <Compile Include="Components\Switches\FrequencyBehavior.cs" />
+    <Compile Include="Components\Switches\ModelBaseParameters.cs" />
+    <Compile Include="Components\Switches\VSW\VoltageControlled.cs" />
+    <Compile Include="Components\Switches\VSW\VoltageModelParameters.cs" />
+    <Compile Include="Components\Switches\VSW\VoltageSwitch.cs" />
+    <Compile Include="Components\Switches\VSW\VoltageSwitchModel.cs" />
+    <Compile Include="Components\Voltagesources\CCVS\BaseParameters.cs" />
+    <Compile Include="Components\Voltagesources\CCVS\BiasingBehavior.cs" />
+    <Compile Include="Components\Voltagesources\CCVS\CurrentControlledVoltageSource.cs" />
+    <Compile Include="Components\Voltagesources\CCVS\FrequencyBehavior.cs" />
+    <Compile Include="Components\Voltagesources\VCVS\BaseParameters.cs" />
+    <Compile Include="Components\Voltagesources\VCVS\BiasingBehavior.cs" />
+    <Compile Include="Components\Voltagesources\VCVS\FrequencyBehavior.cs" />
+    <Compile Include="Components\Voltagesources\VCVS\VoltageControlledVoltageSource.cs" />
+    <Compile Include="Components\Voltagesources\VSRC\AcceptBehavior.cs" />
+    <Compile Include="Components\Voltagesources\VSRC\BiasingBehavior.cs" />
+    <Compile Include="Components\Voltagesources\VSRC\FrequencyBehavior.cs" />
+    <Compile Include="Components\Voltagesources\VSRC\VoltageSource.cs" />
+    <Compile Include="Components\Waveforms\Pulse.cs" />
+    <Compile Include="Components\Waveforms\Pwl.cs" />
+    <Compile Include="Components\Waveforms\Sine.cs" />
+    <Compile Include="Components\Waveforms\Waveform.cs" />
+    <Compile Include="Diagnostics\BadParameterException.cs" />
+    <Compile Include="Diagnostics\CircuitException.cs" />
+    <Compile Include="Diagnostics\CircuitWarning.cs" />
+    <Compile Include="Diagnostics\WarningEventArgs.cs" />
+    <Compile Include="General\Constants.cs" />
+    <Compile Include="General\ICloneable.cs" />
+    <Compile Include="General\Reflection.cs" />
+    <Compile Include="General\TypeDictionary.cs" />
+    <Compile Include="General\Utility.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="Parameters\GivenParameter.cs" />
+    <Compile Include="Parameters\Parameter.cs" />
+    <Compile Include="Parameters\ParameterHelper.cs" />
+    <Compile Include="Parameters\ParameterPool.cs" />
+    <Compile Include="Parameters\ParameterSet.cs" />
+    <Compile Include="Parameters\ParameterSetDictionary.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs" />
+    <Compile Include="Simulations\AfterExecuteEventArgs.cs" />
+    <Compile Include="Simulations\Base\BaseConfiguration.cs" />
+    <Compile Include="Simulations\Base\BaseSimulation.cs" />
+    <Compile Include="Simulations\Base\BaseSimulationState.cs" />
+    <Compile Include="Simulations\Base\BaseSimulationStatistics.cs" />
+    <Compile Include="Simulations\Base\ConvergenceAid.cs" />
+    <Compile Include="Simulations\Base\Frequency\ComplexSimulationState.cs" />
+    <Compile Include="Simulations\Base\Frequency\ComplexSimulationStatistics.cs" />
+    <Compile Include="Simulations\Base\Frequency\FrequencyConfiguration.cs" />
+    <Compile Include="Simulations\Base\Frequency\FrequencySimulation.cs" />
+    <Compile Include="Simulations\Base\Frequency\IFrequencyBehavior.cs" />
+    <Compile Include="Simulations\Base\IBiasingBehavior.cs" />
+    <Compile Include="Simulations\Base\IInitialConditionBehavior.cs" />
+    <Compile Include="Simulations\Base\InitializationModes.cs" />
+    <Compile Include="Simulations\Base\ITemperatureBehavior.cs" />
+    <Compile Include="Simulations\Base\LoadStateEventArgs.cs" />
+    <Compile Include="Simulations\Base\ModifiedNodalAnalysisHelper.cs" />
+    <Compile Include="Simulations\Base\Sweeps\DecadeSweep.cs" />
+    <Compile Include="Simulations\Base\Sweeps\LinearSweep.cs" />
+    <Compile Include="Simulations\Base\Sweeps\OctaveSweep.cs" />
+    <Compile Include="Simulations\Base\Sweeps\Sweep.cs" />
+    <Compile Include="Simulations\Base\Time\Histories\ArrayHistory.cs" />
+    <Compile Include="Simulations\Base\Time\Histories\History.cs" />
+    <Compile Include="Simulations\Base\Time\Histories\NodeHistory.cs" />
+    <Compile Include="Simulations\Base\Time\Histories\ReadOnlyHistory.cs" />
+    <Compile Include="Simulations\Base\Time\IAcceptBehavior.cs" />
+    <Compile Include="Simulations\Base\Time\IntegrationMethods\IntegrationMethod.cs" />
+    <Compile Include="Simulations\Base\Time\IntegrationMethods\ModifyTimestepEventArgs.cs" />
+    <Compile Include="Simulations\Base\Time\IntegrationMethods\States\IntegrationState.cs" />
+    <Compile Include="Simulations\Base\Time\IntegrationMethods\States\StateDerivative.cs" />
+    <Compile Include="Simulations\Base\Time\IntegrationMethods\States\StateHistory.cs" />
+    <Compile Include="Simulations\Base\Time\IntegrationMethods\States\StateManager.cs" />
+    <Compile Include="Simulations\Base\Time\IntegrationMethods\TruncateEvaluateEventArgs.cs" />
+    <Compile Include="Simulations\Base\Time\IntegrationMethods\TruncateTimestepEventArgs.cs" />
+    <Compile Include="Simulations\Base\Time\ITimeBehavior.cs" />
+    <Compile Include="Simulations\Base\Time\TimeConfiguration.cs" />
+    <Compile Include="Simulations\Base\Time\TimeSimulation.cs" />
+    <Compile Include="Simulations\Base\Time\TimeSimulationStatistics.cs" />
+    <Compile Include="Simulations\BeforeExecuteEventArgs.cs" />
+    <Compile Include="Simulations\Behaviors\Behavior.cs" />
+    <Compile Include="Simulations\Behaviors\BehaviorFactoryDictionary.cs" />
+    <Compile Include="Simulations\Behaviors\BehaviorList.cs" />
+    <Compile Include="Simulations\Behaviors\BehaviorPool.cs" />
+    <Compile Include="Simulations\Behaviors\EntityBehaviorDictionary.cs" />
+    <Compile Include="Simulations\Behaviors\IBehavior.cs" />
+    <Compile Include="Simulations\CollectionConfiguration.cs" />
+    <Compile Include="Simulations\ExportDataEventArgs.cs" />
+    <Compile Include="Simulations\Exports\ComplexCurrentExport.cs" />
+    <Compile Include="Simulations\Exports\ComplexPropertyExport.cs" />
+    <Compile Include="Simulations\Exports\ComplexVoltageExport.cs" />
+    <Compile Include="Simulations\Exports\Export.cs" />
+    <Compile Include="Simulations\Exports\GenericExport.cs" />
+    <Compile Include="Simulations\Exports\InputNoiseDensityExport.cs" />
+    <Compile Include="Simulations\Exports\OutputNoiseDensityExport.cs" />
+    <Compile Include="Simulations\Exports\RealCurrentExport.cs" />
+    <Compile Include="Simulations\Exports\RealPropertyExport.cs" />
+    <Compile Include="Simulations\Exports\RealVoltageExport.cs" />
+    <Compile Include="Simulations\Implementations\AC\AC.cs" />
+    <Compile Include="Simulations\Implementations\DC\DC.cs" />
+    <Compile Include="Simulations\Implementations\DC\DCConfiguration.cs" />
+    <Compile Include="Simulations\Implementations\DC\DcParameterSearchEventArgs.cs" />
+    <Compile Include="Simulations\Implementations\DC\NestedSweeps.cs" />
+    <Compile Include="Simulations\Implementations\DC\SweepConfiguration.cs" />
+    <Compile Include="Simulations\Implementations\DC\SweepInstance.cs" />
+    <Compile Include="Simulations\Implementations\Noise\INoiseBehavior.cs" />
+    <Compile Include="Simulations\Implementations\Noise\Noise.cs" />
+    <Compile Include="Simulations\Implementations\Noise\NoiseConfiguration.cs" />
+    <Compile Include="Simulations\Implementations\Noise\NoiseState.cs" />
+    <Compile Include="Simulations\Implementations\OP\OP.cs" />
+    <Compile Include="Simulations\Implementations\Transient\IntegrationMethods\Breakpoints\Breakpoints.cs" />
+    <Compile Include="Simulations\Implementations\Transient\IntegrationMethods\Breakpoints\IBreakpoints.cs" />
+    <Compile Include="Simulations\Implementations\Transient\IntegrationMethods\FixedEuler\FixedEuler.cs" />
+    <Compile Include="Simulations\Implementations\Transient\IntegrationMethods\FixedEuler\FixedEulerStateDerivative.cs" />
+    <Compile Include="Simulations\Implementations\Transient\IntegrationMethods\Spice\Gear\Gear.cs" />
+    <Compile Include="Simulations\Implementations\Transient\IntegrationMethods\Spice\Gear\GearStateDerivative.cs" />
+    <Compile Include="Simulations\Implementations\Transient\IntegrationMethods\Spice\ITruncatable.cs" />
+    <Compile Include="Simulations\Implementations\Transient\IntegrationMethods\Spice\SpiceConfiguration.cs" />
+    <Compile Include="Simulations\Implementations\Transient\IntegrationMethods\Spice\SpiceIntegrationMethod.cs" />
+    <Compile Include="Simulations\Implementations\Transient\IntegrationMethods\Spice\StateHistoryDefault.cs" />
+    <Compile Include="Simulations\Implementations\Transient\IntegrationMethods\Spice\Trapezoidal\Trapezoidal.cs" />
+    <Compile Include="Simulations\Implementations\Transient\IntegrationMethods\Spice\Trapezoidal\TrapezoidalStateDerivative.cs" />
+    <Compile Include="Simulations\Implementations\Transient\Transient.cs" />
+    <Compile Include="Simulations\Simulation.cs" />
+    <Compile Include="Simulations\SimulationState.cs" />
+    <Compile Include="Simulations\SimulationStatistics.cs" />
+    <Compile Include="Simulations\Statistics.cs" />
+    <Compile Include="Simulations\Variables\Variable.cs" />
+    <Compile Include="Simulations\Variables\VariableEventArgs.cs" />
+    <Compile Include="Simulations\Variables\VariableSet.cs" />
+    <Compile Include="Simulations\Variables\VariableType.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

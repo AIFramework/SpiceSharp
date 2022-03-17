@@ -1,19 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30104.148
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0530BC95-5ECA-4D35-BD40-7880B4803608}"
-	ProjectSection(SolutionItems) = preProject
-		.travis.yml = .travis.yml
-		appveyor.yml = appveyor.yml
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpiceSharp", "SpiceSharpNetFr\SpiceSharp.csproj", "{2F589DF3-8D82-4BD1-BF98-955AD62157C1}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SpiceSharp", "SpiceSharp\SpiceSharp.csproj", "{FD906B56-E076-46B7-ACEF-2D870189588C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpiceSharpTest", "SpiceSharpTest\SpiceSharpTest.csproj", "{DE500B6D-352C-4C63-AA37-655D7369D728}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpiceSharpRun", "SpiceSharpRun\SpiceSharpRun.csproj", "{D2A0A58F-CD6A-4B8F-9F81-4B8F25B3303D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{EFFF3637-6154-40A0-B905-4684912C1FDA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,18 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{FD906B56-E076-46B7-ACEF-2D870189588C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FD906B56-E076-46B7-ACEF-2D870189588C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FD906B56-E076-46B7-ACEF-2D870189588C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FD906B56-E076-46B7-ACEF-2D870189588C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{DE500B6D-352C-4C63-AA37-655D7369D728}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{DE500B6D-352C-4C63-AA37-655D7369D728}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{DE500B6D-352C-4C63-AA37-655D7369D728}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{DE500B6D-352C-4C63-AA37-655D7369D728}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D2A0A58F-CD6A-4B8F-9F81-4B8F25B3303D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D2A0A58F-CD6A-4B8F-9F81-4B8F25B3303D}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D2A0A58F-CD6A-4B8F-9F81-4B8F25B3303D}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D2A0A58F-CD6A-4B8F-9F81-4B8F25B3303D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F589DF3-8D82-4BD1-BF98-955AD62157C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F589DF3-8D82-4BD1-BF98-955AD62157C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F589DF3-8D82-4BD1-BF98-955AD62157C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F589DF3-8D82-4BD1-BF98-955AD62157C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFFF3637-6154-40A0-B905-4684912C1FDA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFFF3637-6154-40A0-B905-4684912C1FDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFFF3637-6154-40A0-B905-4684912C1FDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFFF3637-6154-40A0-B905-4684912C1FDA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
