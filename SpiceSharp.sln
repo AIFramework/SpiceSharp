@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpiceSharp", "SpiceSharpNet
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{EFFF3637-6154-40A0-B905-4684912C1FDA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LowPass", "LowPass\LowPass.csproj", "{5FFE84B8-9037-417B-A352-F860B0F55650}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{EFFF3637-6154-40A0-B905-4684912C1FDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EFFF3637-6154-40A0-B905-4684912C1FDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EFFF3637-6154-40A0-B905-4684912C1FDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5FFE84B8-9037-417B-A352-F860B0F55650}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5FFE84B8-9037-417B-A352-F860B0F55650}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5FFE84B8-9037-417B-A352-F860B0F55650}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5FFE84B8-9037-417B-A352-F860B0F55650}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
