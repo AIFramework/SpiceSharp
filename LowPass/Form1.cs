@@ -64,6 +64,7 @@ namespace LowPass
                bPolar
             };
 
+
             return block;
         }
 
@@ -98,7 +99,7 @@ namespace LowPass
         /// <summary>
         /// Анализ по переменному току
         /// </summary>
-        private void ACAnalyzer(Circuit ckt, AC ac, string vSource = "V2")
+        private Tuple<Vector, Vector> ACAnalyzer(Circuit ckt, AC ac, string vSource = "V2")
         {
 
             foreach (var item in ckt)
@@ -121,12 +122,11 @@ namespace LowPass
                 var K = output / input;
                 k.Add(K);
                 f.Add(exportDataEventArgs.Frequency);
-                
-                if(f.Count == 900) chartVisual1.PlotBlack(f, k);
             };
 
 
             ac.Run(ckt);
+            return new Tuple<Vector, Vector>(f, k);
         }
 
 
@@ -147,12 +147,27 @@ namespace LowPass
             C3l.Text = "C3 = "+ Math.Round(c1 *1e6, 3) +" мкФ";
             C2l.Text = "C2 = "+ Math.Round(c2 * 1e6, 3) + " мкФ";
             nC.Text = "Число каскадов: " + n;
+            var ac = new AC("ac", new LinearSweep(0, 2 * fCut, 1000)); // Анализатор
+
+            chartVisual1.Clear();
+
+            circuit = CreateCrk(n_blocks: n, c1: c1, c2: c2); // Фильтр заданного порядка
+            var outp = ACAnalyzer(circuit, ac);
+
+            chartVisual1.AddPlot(outp.Item1, outp.Item2, "Идеальные пар.");
+
+            // Округленные параметры
+            circuit = CreateCrk(n_blocks: n, 
+                c1: Math.Round(c1*1e6,1)/1e6, 
+                c2: Math.Round(c2*1e6,1) / 1e6); 
 
 
-            circuit = CreateCrk(n_blocks: n, c1:c1, c2: c2); // Фильтр заданного порядка
+            outp = ACAnalyzer(circuit, ac);
 
-            var ac = new AC("ac", new LinearSweep(0, 2* fCut, 1000)); // Анализатор
-            ACAnalyzer(circuit, ac);
+            chartVisual1.AddPlot(outp.Item1, outp.Item2, "Реальные пар.");
+
+            
+            //ACAnalyzer(circuit, ac);
         }
     }
 }
