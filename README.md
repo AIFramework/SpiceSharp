@@ -1,15 +1,10 @@
 # <img src="https://spicesharp.github.io/SpiceSharp/api/images/logo_full.svg" width="45px" /> Spice# (SpiceSharp)
-Spice# is a Spice circuit simulator written in C#. The framework is made to be compatible with the original Berkeley Spice simulator, but bugs have been squashed and features can and will probably will be added.
+Spice# — это симулятор схем Spice, написанный на языке C#. Платформа создана для совместимости с оригинальным симулятором Berkeley Spice, но в ней устранены многие ошибки.
 
-## Documentation
-You can find documentation at [https://spicesharp.github.io/SpiceSharp/](https://spicesharp.github.io/SpiceSharp/). There you can find a guide for **getting started**, as well as more information about:
-- Supported types of analysis.
-- The general structure of Spice#.
-- A tutorial on how to implement your own *custom* model equations (prerequisite knowledge needed).
-- An example of changing parameters during simulation.
+В планах сделать поодержку AIFamework и AIDog, для реализации синтеза схем методами искусственного интеллекта
 
-## Quickstart
-Simulating a circuit is relatively straightforward. For example:
+##  Быстрый старт
+Моделировать принципиальную схема схему относительно просто. Например:
 
 ```csharp
 using System;
@@ -44,31 +39,4 @@ namespace SpiceSimulation
 }
 ```
 
-Most standard Spice-components are available, and building your own custom components is also possible!
-
-## Installation
-Spice# is available as a **NuGet Package**.
-
-[![NuGet Badge](https://buildstats.info/nuget/spicesharp)](https://www.nuget.org/packages/SpiceSharp/) SpiceSharp
-
-## Current build status
-
-|    | Status |
-|:---|-------:|
-|AppVeyor CI (Windows)|[![Build status](https://ci.appveyor.com/api/projects/status/tg6q7y8m5725g8ou/branch/master?svg=true)](https://ci.appveyor.com/project/SpiceSharp/spicesharp/branch/master)|
-|Travis CI (Linux/iOS/Mono)|[![Build Status](https://travis-ci.org/SpiceSharp/SpiceSharp.svg?branch=master)](https://travis-ci.org/SpiceSharp/SpiceSharp)|
-
-## Aim of Spice#?
-
-Spice# aims to be:
-- A **Library** rather than a standalone piece of software like most simulators currently are.
-- **Accessible** for both the amateur and advanced electronics enthusiast (and perhaps professional designer). In order to decrease the hurdle, a [Spice# parser](https://github.com/SpiceSharp/SpiceSharpParser) is also being developed. This also includes it being cross-platform (.NET and Mono).
-- **Compatible** with the *original Spice 3f5* software (without the bugs). There's a reason why this has become the industry standard.
-- **Customizable** with custom simulations, custom models, integration methods, solver, etc.
-- **Performance**, but still completely managed code. Nobody wants a slow simulator.
-
-## What Spice# is not
-
-Having been implemented in the .NET framework does have some limitations:
-- Unmanaged C/C++ code can often be optimized more than managed code.
-- Spice# uses *Reflection* to give you a better experience. However if you decide to use reflection, you may feel some performance hit.
+Доступно большинство стандартных компонентов Spice, а также возможно создание собственных компонентов!
